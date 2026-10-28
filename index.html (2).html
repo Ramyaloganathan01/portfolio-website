@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ramya L – Gen AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2ee;--surface:#f8faf7;--ink:#14211c;--mute:#52635b;--line:#c9d4cc;--pcb:#0e7c5a;--gold:#b5800f;--on:#fff;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a16;--surface:#16251f;--ink:#e8f0ea;--mute:#9db1a6;--line:#2a3d34;--pcb:#3fcf9b;--gold:#e5b44a;--on:#0f1a16;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1a16;--surface:#16251f;--ink:#e8f0ea;--mute:#9db1a6;--line:#2a3d34;--pcb:#3fcf9b;--gold:#e5b44a;--on:#0f1a16;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 'IBM Plex Sans',system-ui,sans-serif;
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:var(--bg);opacity:.9;z-index:-1}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--pcb)}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 22px}
+nav{display:flex;gap:18px;justify-content:space-between;align-items:center;padding:18px 0;flex-wrap:wrap}
+nav b{font-family:'Bricolage Grotesque';font-size:20px}
+nav div{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--mute);text-decoration:none;font-size:15px}nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 30px}
+.hero h1{font-size:clamp(40px,8vw,84px);font-weight:800;letter-spacing:-.03em;max-width:12ch}
+.hero p{font-size:19px;max-width:58ch;color:var(--mute);margin:22px 0}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:500;text-decoration:none;border:1.5px solid var(--pcb)}
+.btn.p{background:var(--pcb);color:var(--on)}.btn.s{color:var(--pcb)}
+.pipe{background:var(--surface);border:1.5px solid var(--ink);border-radius:10px;padding:22px;margin:34px 0 10px}
+.pipe h2{font-size:22px;margin-bottom:4px}.pipe>p{margin:0 0 18px;color:var(--mute);font-size:15px}
+.nodes{display:flex;gap:0;flex-wrap:wrap}
+.node{flex:1 1 130px;position:relative;padding:12px 10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:500 15px 'IBM Plex Sans';cursor:pointer;text-align:left;margin:-1px 0 0 -1px}
+.node small{display:block;color:var(--mute);font-weight:400}
+.node.ai{border-top:3px solid var(--pcb)}.node.hw{border-top:3px solid var(--gold)}
+.node[aria-pressed="true"]{background:var(--ink);color:var(--bg)}.node[aria-pressed="true"] small{color:var(--bg)}
+#detail{margin-top:16px;padding:14px 16px;border-left:4px solid var(--pcb);background:var(--bg);min-height:76px}
+.key{display:flex;gap:18px;font-size:13px;color:var(--mute);margin-top:12px}.key i{display:inline-block;width:12px;height:4px;margin-right:6px;vertical-align:middle}
+section{padding:46px 0 10px}
+section>h2{font-size:clamp(28px,4vw,40px);margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:20px}
+.card h3{font-size:20px;margin-bottom:6px}.card p{margin:6px 0 0;color:var(--mute);font-size:15px}
+.tag{font-size:13px;color:var(--gold);font-weight:500;display:block;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips span{border:1px solid var(--line);background:var(--bg);padding:3px 10px;border-radius:99px;font-size:14px}
+.tl{border-left:2px solid var(--ink);padding-left:22px;margin-left:6px}
+.tl article{margin-bottom:26px;position:relative}
+.tl article::before{content:"";position:absolute;left:-30px;top:8px;width:12px;height:12px;background:var(--pcb);border-radius:50%}
+.tl h3{font-size:21px}.tl .meta{color:var(--mute);font-size:14px}.tl ul{margin:8px 0 0;padding-left:18px}
+.note{font-size:14px;color:var(--mute);margin-top:14px}
+footer{padding:56px 0 40px}
+footer h2{font-size:clamp(30px,5vw,48px);max-width:16ch;margin-bottom:16px}
+footer p{color:var(--mute)}
+@media (prefers-reduced-motion:no-preference){.hero h1{animation:in .7s ease-out both}@keyframes in{from{opacity:0;transform:translateY(14px)}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Ramya L</b><div><a href="#pipeline">Pipeline</a><a href="#skills">Skills</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<h1>I take signals from sensors to language models.</h1>
+<p>Gen AI Engineer (fresher) with a Python and SQL foundation, completed Generative AI training covering LLMs, embeddings, RAG and deployment, plus hands-on experience in embedded firmware and IoT at SYRMA SGS Technology. Open to AI Engineer roles in Chennai.</p>
+<div class="btns"><a class="btn p" href="mailto:ramyalramya158@gmail.com">Email me</a><a class="btn s" href="tel:+919344718784">+91 93447 18784</a></div>
+
+<div class="pipe" id="pipeline">
+<h2>From hardware to Gen AI</h2>
+<p>Select a stage to see how my experience maps to it.</p>
+<div class="nodes" role="group" aria-label="Pipeline stages">
+<button class="node hw" aria-pressed="true" data-i="0">Sensors<small>Arduino, I2C, SPI</small></button>
+<button class="node hw" aria-pressed="false" data-i="1">Firmware<small>Embedded C, UART</small></button>
+<button class="node ai" aria-pressed="false" data-i="2">Python and data<small>Pandas, SQL</small></button>
+<button class="node ai" aria-pressed="false" data-i="3">Embed and retrieve<small>FAISS, Chroma</small></button>
+<button class="node ai" aria-pressed="false" data-i="4">LLM app<small>RAG, FastAPI</small></button>
+</div>
+<div id="detail" aria-live="polite"></div>
+<div class="key"><span><i style="background:var(--gold)"></i>Work experience</span><span><i style="background:var(--pcb)"></i>Gen AI training</span></div>
+</div>
+</header>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card"><h3>Gen AI and LLMs</h3><p>From my Generative AI course at Aimore Technologies (Apr–Oct 2026).</p>
+<div class="chips"><span>LLM fundamentals</span><span>Prompt engineering</span><span>Zero/few-shot, CoT</span><span>Embeddings</span><span>FAISS</span><span>Chroma</span><span>RAG</span><span>OpenAI API</span><span>Hugging Face</span><span>FastAPI / Flask</span><span>Streamlit</span><span>Gradio</span><span>Agentic AI (learning)</span></div></div>
+<div class="card"><h3>AI and ML</h3><p>Core concepts and libraries.</p>
+<div class="chips"><span>Supervised learning</span><span>Unsupervised learning</span><span>Reinforcement learning</span><span>Text classification</span><span>Model evaluation</span><span>Neural networks</span><span>CNN</span><span>RNN</span><span>NLP</span><span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>NLTK</span></div></div>
+<div class="card"><h3>Programming and data</h3><p>Day-to-day engineering tools.</p>
+<div class="chips"><span>Python</span><span>Pandas</span><span>PySpark</span><span>SQL: joins, CTEs, window functions</span><span>Stored procedures</span><span>Query optimization</span><span>Java</span><span>C/C++</span><span>JavaScript</span><span>Bash</span><span>Git</span><span>Linux (basic)</span><span>Jupyter</span><span>Matplotlib</span><span>Seaborn</span></div></div>
+<div class="card"><h3>Embedded and IoT</h3><p>My engineering background.</p>
+<div class="chips"><span>Embedded C</span><span>Arduino</span><span>ATmega328P</span><span>8051</span><span>UART</span><span>I2C</span><span>SPI</span><span>PCB design</span><span>Real-time systems</span><span>Integration testing</span><span>Debugging</span><span>Technical documentation</span></div></div>
+</div>
+</section>
+
+<section id="work">
+<h2>Experience</h2>
+<div class="tl">
+<article><h3>Embedded Software Engineer</h3><div class="meta">SYRMA SGS Technology, Chennai · 2022 – Present</div>
+<ul><li>Wrote and tested embedded firmware, and debugged PCB bring-up issues.</li><li>Ran integration tests on IoT modules and documented procedures and results.</li></ul></article>
+<article><h3>Java Full Stack Intern</h3><div class="meta">VEI Technologies Pvt. Ltd., Tamil Nadu · 2021</div>
+<ul><li>Built a sentiment analysis model in Python using machine learning algorithms.</li><li>Developed Java web modules with Git version control.</li></ul></article>
+<article><h3>Industrial and automotive internships</h3><div class="meta">TVS Training and Services, Chennai · Gencor Pacific Auto Engineering, Puducherry · 2020</div>
+<ul><li>Industrial automation, manufacturing processes, automotive control systems and embedded diagnostics.</li></ul></article>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card"><span class="tag">AI / NLP</span><h3>Sentiment Analysis with ML</h3><p>A text classifier that labels text by sentiment, trained with supervised ML algorithms in Python during my internship at VEI Technologies.</p><div class="chips"><span>Python</span><span>ML libraries</span><span>NLP</span></div></div>
+<div class="card"><span class="tag">IoT</span><h3>Underground Coal Mine Monitoring</h3><p>Real-time safety system that detects hazardous gases (CO, CH4), temperature and humidity, then triggers alerts and actuators when thresholds are breached.</p><div class="chips"><span>Arduino Uno</span><span>Sensors</span></div></div>
+<div class="card"><span class="tag">IoT</span><h3>IoT-Based Circuit Breaker</h3><p>Automated protection system with fault detection and remote disconnection over an IoT network.</p><div class="chips"><span>ATmega328P</span><span>IoT</span></div></div>
+<div class="card"><span class="tag">Sensors</span><h3>Autonomous Water Quality Monitoring</h3><p>Low-cost optical sensor system reading turbidity, pH and dissolved oxygen, with wireless data transmission.</p><div class="chips"><span>Sensors</span><span>Wireless</span></div></div>
+</div>
+<p class="note">Gen AI project in progress: a RAG application using embeddings, a vector database and an LLM API. Repository link coming soon.</p>
+</section>
+
+<section>
+<h2>Education and recognition</h2>
+<div class="grid">
+<div class="card"><h3>B.E. Electronics and Communication</h3><p>IFET College of Engineering, Villupuram · 2018 – 2022</p></div>
+<div class="card"><h3>Generative AI Course</h3><p>Aimore Technologies, Chennai · Apr – Oct 2026. Also: SAWAIT AI Learning Challenge (GUVI), IoT workshop with Arduino and Raspberry Pi (PSNA).</p></div>
+<div class="card"><h3>1st Prize, E-GADGET Project Expo</h3><p>Hardware project competition. Presented papers on the Coal Mine Monitoring System and an Automatic Vehicle Fuel Station.</p></div>
+</div>
+</section>
+
+<footer id="contact">
+<h2>Let’s build something that reads, retrieves and responds.</h2>
+<p>Based in Tamil Nadu, available for on-site roles in Chennai. Languages: English (professional), Tamil (native).</p>
+<div class="btns"><a class="btn p" href="mailto:ramyalramya158@gmail.com">ramyalramya158@gmail.com</a><a class="btn s" href="tel:+919344718784">+91 93447 18784</a></div>
+</footer>
+</div>
+<script>
+const D=[
+["Sensors","I worked with Arduino, ATmega328P and 8051 boards, reading gas, temperature, humidity, pH and turbidity sensors over I2C and SPI."],
+["Firmware","At SYRMA SGS I write and test embedded firmware and debug boards at PCB bring-up. This gave me a habit of testing each layer and documenting results."],
+["Python and data","Python, Pandas and SQL (CTEs, window functions) for cleaning, filtering and analysing data. I built a sentiment classifier during my VEI internship."],
+["Embed and retrieve","From my Gen AI course: turning text into embeddings and searching them with FAISS and Chroma."],
+["LLM app","From my Gen AI course: prompt engineering, RAG, the OpenAI API and Hugging Face, served with FastAPI or Flask and demoed in Streamlit or Gradio."]];
+const b=[...document.querySelectorAll('.node')],d=document.getElementById('detail');
+function show(i){b.forEach((n,k)=>n.setAttribute('aria-pressed',k==i));d.innerHTML='<b>'+D[i][0]+'</b><br>'+D[i][1]}
+b.forEach((n,i)=>n.addEventListener('click',()=>show(i)));show(0);
+</script>
+</body>
+</html>
